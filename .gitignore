@@ -1,0 +1,15 @@
+# 매크로 실행 중 생성되는 런타임 산출물
+/Screenshot/
+*.png
+ocr_log.txt
+macro_ocr_out_*.txt
+macro_ocr_err_*.txt
+
+# 개인 설정 분리용 (원한다면 실제 토큰을 여기 담아서 #Include)
+config.local.ahk
+
+# OS / 편집기
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

@@ -1,42 +1,49 @@
 ; ===================================================================
 ;  config.txt 템플릿 - 이 파일을 복사해서 config.txt 로 저장 후 실제 값 채우세요
 ;  (config.txt는 .gitignore 처리되어 git에 올라가지 않습니다 - 텔레그램 토큰 등 포함)
+;  color_click_macro_configurable.ahk 설정값
+;  메모장으로 고치고 매크로(ahk 더블클릭)를 다시 실행하면 반영됨
+;  (재컴파일 필요 없음)
+;  0xD1CAF9(플로어 연보라색)
+;  0xB0E1AD(밋그석 초록색)
+;  0xAEE5FF(일반석 연하늘색)
+;  그외 기타 색상은 직접 F8버튼 통해서 추출
 ; ===================================================================
 
-; ===== 감지 색상 검색 범위 =====
+
+; ===== 감지 색상 검색 범위, 좌석 뜨는 예매창 =====
 SearchX1=1
 SearchY1=80
 SearchX2=1400
 SearchY2=1025
 
-; F8로 확인한 실제 색상값
 TargetColor=0xD1CAF9
 ; 색상 오차 허용치(0~255). 감지가 안 되면 늘리고, 엉뚱한 곳에서 반응하면 줄이세요.
-Variation=10
+Variation=15
 
-; ===== 구역 판정 (감지 위치가 이 사각형 안이면 A시퀀스, 밖이면 B시퀀스) =====
+; ===== 구역 판정 (감지 위치가 이 사각형 안이면 A시퀀스, 밖이면 B시퀀스) 10분 예매 완료 되면 뜨는 창 구역 선택=====
 ZoneX1=773
 ZoneX2=1147
 ZoneY1=550
 ZoneY2=590
 
-; ===== 캡처할 영역 (캐릭터/보안문자 부분만, 흰색 배경 안 들어가게) =====
+; ===== 캡처할 영역 (보안문자 부분만, 무조건 흰색 배경 안 들어가게) =====
 CaptureX1=869
 CaptureY1=423
 CaptureX2=1049
 CaptureY2=478
 
-; ===== 클릭 좌표 보정값 (F9 테스트로 어긋난 만큼 확인 후 조정) =====
+; ===== 클릭 좌표 보정값 수정X =====
 OffsetX=0
 OffsetY=5
 
-; ===== 타이밍(ms) =====
+; ===== 타이밍(ms) 수정X =====
 SequenceDelayMs=2000
 CaptureDelayMs=5000
 PollDelay=1
 CooldownAfterClick=300
 
-; ===== 사운드 =====
+; ===== 사운드 수정X=====
 EnableSound=1
 BeepFreq=1500
 BeepDurMs=60
@@ -47,7 +54,7 @@ EnableScreenshot=1
 TelegramBotToken=여기에_봇_토큰_입력
 TelegramChatId=여기에_챗ID_입력
 
-; ===== OCR 실행 파일 (predict_for_macro.py를 PyInstaller로 빌드한 exe) =====
+; ===== OCR 실행 파일 수정 X =====
 ; sequence_a.txt / sequence_b.txt 의 run= 항목에서 {EXE}, {MODEL} 로 참조됨
 PredictExe=C:\Project\Macro\predict_for_macro\predict_for_macro.exe
-CaptchaModel=C:\Project\기타\captcha_ocr\captcha.onnx
+CaptchaModel=C:\Project\Macro\predict_for_macro\captcha.onnx

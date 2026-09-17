@@ -1,0 +1,16 @@
+; ===================================================================
+;  ClickSequenceA - 색 감지 위치가 A구역(ZoneX1~X2, ZoneY1~Y2) 안일 때 실행
+;  형식: x|y|delay|button|count|capture|run|pressEnter
+;    - delay: 이 스텝 전에 대기할 ms (비우면 config.txt의 SequenceDelayMs 사용)
+;    - button/count: 스크롤할 때만 채움 (WheelUp/WheelDown/WheelLeft/WheelRight, 횟수)
+;    - capture: 캡처해서 저장할 파일명 (예: a.png) - run에서 {IMG}로 참조됨
+;    - run: 실행할 명령. {IMG}=캡처 파일 경로, {EXE}/{MODEL}=config.txt 값으로 치환
+;    - pressEnter: 1이면 run 결과 타이핑 후 Enter까지 누름
+;  ";" 뒤는 전부 주석 (줄 전체든 데이터 뒤에 붙이든 상관없음)
+;  좌표는 F9(감지 확인)나 F8(색상 확인) 눌러서 마우스 위치로 확인하세요.
+; ===================================================================
+
+1272|283|4000|WheelUp|10||| ; 날짜
+1413|650|4000|||| ; 확인
+803|595||||a.png|"{EXE}" "{IMG}" --model "{MODEL}"|1 ; 보안문자 캡처 -> OCR -> 채팅창 입력 후 Enter
+863|415|||| ; 우블 위치

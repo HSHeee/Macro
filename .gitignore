@@ -8,6 +8,10 @@ macro_ocr_err_*.txt
 # 개인 설정 분리용 (원한다면 실제 토큰을 여기 담아서 #Include)
 config.local.ahk
 
+# 텔레그램 토큰 등 실제 값이 들어있는 설정 파일 (텍스트 기반, git에는 안 올림)
+config/config.txt
+
+
 # OS / 편집기
 Thumbs.db
 Desktop.ini
